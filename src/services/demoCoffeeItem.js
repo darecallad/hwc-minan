@@ -1,4 +1,4 @@
-import * as catagoryAPI from "./demoCategory";
+import * as categoryAPI from "./demoCategory";
 
 const coffee = [
   {
@@ -10,7 +10,7 @@ const coffee = [
   },
 ];
 
-export function getCoffee() {
+export function getCoffees() {
   return coffee;
 }
 
@@ -19,23 +19,23 @@ export function getCoffee(id) {
 }
 
 export function saveCoffee(coffee) {
-  let coffeeInDb = coffees.find((c) => c._id === c._id) || {};
+  let coffeeInDb = coffee.find((c) => c._id === c._id) || {};
   coffeeInDb.name = coffee.name;
-  coffeeInDb.category = categorysAPI.categorys.find(
+  coffeeInDb.category = categoryAPI.category.find(
     (c) => c._id === coffee.categoryId
   );
   coffeeInDb.numberInStock = coffee.numberInStock;
 
   if (!coffeeInDb._id) {
     coffeeInDb._id = Date.now();
-    coffees.push(coffeeInDb);
+    coffee.push(coffeeInDb);
   }
 
   return coffeeInDb;
 }
 
 export function deleteCoffee(id) {
-  let coffeeInDb = coffees.find((c) => c._id === id);
-  coffees.splice(coffees.indexOf(coffeeInDb), 1);
+  let coffeeInDb = coffee.find((c) => c._id === id);
+  coffee.splice(coffee.indexOf(coffeeInDb), 1);
   return coffeeInDb;
 }

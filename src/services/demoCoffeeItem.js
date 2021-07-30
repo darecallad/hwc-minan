@@ -4,7 +4,8 @@ const coffee = [
   {
     _id: "abc0a001b000c001",
     title: "經典九號",
-    image: "../images/1黑沃烘豆師經典九號.jpg",
+
+    image: " ",
     category: { _id: "abc0a001b000c000", name: "Coffee" },
     numberInStock: 6,
   },
